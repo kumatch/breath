@@ -11,7 +11,7 @@ var jsote = require('jsote');
 
 var template = {
     say: {
-        hello: "Hello <%= params.name %>, from <%= params.birth %>."
+        hello: "Hello <%= params.name %> (<%= params.birth %>)"
     },
 
     params: {
@@ -21,13 +21,13 @@ var template = {
 };
 
 var data = jsote(template).toObject();
-console.log(data.say.hello); // "Hello javascript, from 1995."
+console.log(data.say.hello); // "Hello javascript (1995)"
 
-var data2 = jsote(template).toObject({ params: { birth: "Netscape" } });
-console.log(data2.say.hello); // "Hello javascript, from Netscape."
+var data2 = jsote(template).toObject({ params: { birth: "by Netscape" } });
+console.log(data2.say.hello); // "Hello javascript (by Netscape)"
 
 var value = jsote(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
-console.log(value); // "Hello Node, from 2009."
+console.log(value); // "Hello Node (2009)"
 ```
 
 
