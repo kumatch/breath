@@ -3,7 +3,7 @@ jsote
 
 javascript object template on Node.
 
-Usage
+Usage (draft)
 -----
 
 ```javascript
