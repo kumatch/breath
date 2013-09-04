@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var create_data = require('../lib/data');
 
-describe('jsopt data object', function () {
+describe('jsote data object', function () {
     var core = {
         foo: "a",
         bar: {

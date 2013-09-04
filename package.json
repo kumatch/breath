@@ -1,14 +1,14 @@
 {
   "author": "Yosuke Kumakura <kumatch@gmail.com>",
-  "name": "jsopt",
-  "description": "javascript object properties template on Node.",
+  "name": "jsote",
+  "description": "javascript object template on Node.",
   "version": "0.0.1",
-  "main": "./lib/jsopt.js",
+  "main": "./lib/jsote.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kumatch/jsopt.git"
+    "url": "https://github.com/kumatch/jsote.git"
   },
-  "github": "https://github.com/kumatch/jsopt",
+  "github": "https://github.com/kumatch/jsote",
   "dependencies": {
     "lodash": "~1.3"
   },

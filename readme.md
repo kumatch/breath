@@ -1,13 +1,13 @@
-jsopt
+jsote
 ===========
 
-javascript object properties template on Node.
+javascript object template on Node.
 
 Usage
 -----
 
 ```javascript
-var jsopt = require('jsopt');
+var jsote = require('jsote');
 
 var template = {
     say: {
@@ -20,13 +20,13 @@ var template = {
     }
 };
 
-var data = jsopt(template).toObject();
+var data = jsote(template).toObject();
 console.log(data.say.hello); // "Hello javascript, from 1995."
 
-var data2 = jsopt(template).toObject({ params: { birth: "Netscape" } });
+var data2 = jsote(template).toObject({ params: { birth: "Netscape" } });
 console.log(data2.say.hello); // "Hello javascript, from Netscape."
 
-var value = jsopt(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
+var value = jsote(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
 console.log(value); // "Hello Node, from 2009."
 ```
 

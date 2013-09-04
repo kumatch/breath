@@ -3,7 +3,7 @@ var sinon = require('sinon');
 var _ = require('lodash');
 var template = require('../lib/template');
 
-describe('jsopt template', function () {
+describe('jsote template', function () {
     var _template_spy;
     // var template, _template_spy;
 
