@@ -1,7 +1,7 @@
 var expect = require('chai').expect;
 var create_data = require('../lib/data');
 
-describe('jsote data object', function () {
+describe('breath data object', function () {
     var core = {
         foo: "a",
         bar: {

@@ -3,7 +3,7 @@ var sinon = require('sinon');
 var _ = require('lodash');
 var template = require('../lib/template');
 
-describe('jsote template and get key', function () {
+describe('breath template and get key', function () {
     var core = {
         foo: "foo",
         bar: "bar with <%= foo %>",

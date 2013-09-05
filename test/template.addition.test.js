@@ -2,7 +2,7 @@ var expect = require('chai').expect;
 var _ = require('lodash');
 var template = require('../lib/template');
 
-describe('jsote template with additional object', function () {
+describe('breath template with additional object', function () {
 
     it('success', function () {
         var foo = "OK";

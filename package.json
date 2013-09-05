@@ -1,14 +1,14 @@
 {
   "author": "Yosuke Kumakura <kumatch@gmail.com>",
-  "name": "jsote",
-  "description": "javascript object template on Node.",
+  "name": "breath",
+  "description": "builds a javascript variable from a template.",
   "version": "0.0.1",
-  "main": "./lib/jsote.js",
+  "main": "./lib/breath.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/kumatch/jsote.git"
+    "url": "https://github.com/kumatch/breath.git"
   },
-  "github": "https://github.com/kumatch/jsote",
+  "github": "https://github.com/kumatch/breath",
   "dependencies": {
     "lodash": "~1.3"
   },

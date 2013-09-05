@@ -1,13 +1,13 @@
-jsote
+breath
 ===========
 
-javascript object template on Node.
+builds a javascript variable from a template.
 
 Usage (draft)
 -----
 
 ```javascript
-var jsote = require('jsote');
+var breath = require('breath');
 
 var template = {
     say: {
@@ -20,13 +20,13 @@ var template = {
     }
 };
 
-var data = jsote(template).toObject();
+var data = breath(template).toObject();
 console.log(data.say.hello); // "Hello javascript (1995)"
 
-var data2 = jsote(template).toObject({ params: { birth: "by Netscape" } });
+var data2 = breath(template).toObject({ params: { birth: "by Netscape" } });
 console.log(data2.say.hello); // "Hello javascript (by Netscape)"
 
-var value = jsote(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
+var value = breath(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
 console.log(value); // "Hello Node (2009)"
 ```
 
