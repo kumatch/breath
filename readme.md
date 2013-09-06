@@ -28,7 +28,6 @@ console.log(obj2.say.hello); // "Hello javascript (by Netscape)"
 
 var value = breath(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
 console.log(value); // "Hello Node (2009)"
-```
 
 // async
 breath(template).toObject(function (err, obj) {
@@ -38,6 +37,7 @@ breath(template).toObject(function (err, obj) {
 breath(template).toObject({ params: { name: "world" }}, function (err, obj) {
     //...
 });
+```
 
 
 
