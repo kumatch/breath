@@ -24,7 +24,7 @@ describe('build a varialble from template', function () {
             foo: foo, bar: bar, baz: baz
         };
 
-        var result = breath(core).toObjectSync();
+        var result = breath(core).createSync();
 
         expect(result.foo).be.equal('OK');
         expect(result.bar).be.equal('OK');
@@ -44,7 +44,7 @@ describe('build a varialble from template', function () {
                   ]
         };
 
-        var result = breath(core).toObjectSync();
+        var result = breath(core).createSync();
 
         expect(result.list[0]).be.equal('OK');
         expect(result.list[1]).be.equal('OK');
@@ -69,7 +69,7 @@ describe('build a varialble from template', function () {
             test_object2: "<%= object %>"
         };
 
-        var result = breath(core).toObjectSync();
+        var result = breath(core).createSync();
 
         expect(result.test_number1).be.equal('to string number 42');
         expect(result.test_number2).be.equal(core.number);
@@ -92,7 +92,7 @@ describe('build a varialble from template', function () {
             quux: "str <%= foo %>"
         };
 
-        var result = breath(core).toObjectSync();
+        var result = breath(core).createSync();
 
         expect(result.foo).be.equal('OK');
         expect(result.bar).be.equal('OK');
@@ -109,7 +109,7 @@ describe('build a varialble from template', function () {
             baz: "<%= a %>"
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(ReferenceError);
+        expect(function () { breath(core).createSync(); }).to.throw(ReferenceError);
     });
 
     it('raise error if loop 2 varialbles', function () {
@@ -118,7 +118,7 @@ describe('build a varialble from template', function () {
             bar: "<%= foo %>"
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
 
     it('raise error if loop 2 varialbles with string on default loop limit', function () {
@@ -127,7 +127,7 @@ describe('build a varialble from template', function () {
             bar: "bar <%= foo %>"
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
 
     it('raise error if loop 2 varialbles cycle with string on options loop limit', function () {
@@ -137,7 +137,7 @@ describe('build a varialble from template', function () {
         };
         var limit = 5;
 
-        expect(function () { breath(core, { loop_limit: limit }).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core, { loop_limit: limit }).createSync(); }).to.throw(RangeError);
         expect(_template_spy.callCount).be.equals(limit);
     });
 
@@ -150,7 +150,7 @@ describe('build a varialble from template', function () {
             quux: "<%= foo %>"
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
 
     it('raise error if reference varialble loop with string', function () {
@@ -163,7 +163,7 @@ describe('build a varialble from template', function () {
             quux: "quux <%= baz %>"
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
 
 
@@ -187,7 +187,7 @@ describe('build a varialble from template', function () {
             ]
         };
 
-        var result = breath(core).toObjectSync();
+        var result = breath(core).createSync();
 
         expect(result.foo).be.equal('foo bar baz OK D A');
         expect(result.bar.baz).be.equal('bar baz OK D');
@@ -211,6 +211,6 @@ describe('build a varialble from template', function () {
             }
         };
 
-        expect(function () { breath(core).toObjectSync(); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
 });

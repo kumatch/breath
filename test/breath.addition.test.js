@@ -27,7 +27,7 @@ describe('breath template with additional object', function () {
             ]
         };
 
-        var result = breath(core).toObjectSync(addition);
+        var result = breath(core).createSync(addition);
 
         expect(result.foo).be.equal('OK');
         expect(result.bar).be.equal('OK');
@@ -60,7 +60,7 @@ describe('breath template with additional object', function () {
             foo: "aaa", bar: "bbb"
         };
 
-            var result = breath(core).toObjectSync(addition);
+            var result = breath(core).createSync(addition);
 
         expect(result.foo).be.equal('bbb');
         expect(result.bar).be.equal('aaa');
@@ -75,7 +75,7 @@ describe('breath template with additional object', function () {
             a: "<%= b %>", b: "<%= a %>"
         };
 
-        expect(function () { breath(core).toObjectSync(addition); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(addition); }).to.throw(RangeError);
     });
 
     it('raise error if loop core and additional objects', function () {
@@ -87,6 +87,6 @@ describe('breath template with additional object', function () {
             bar: "<%= foo %>"
         };
 
-        expect(function () { breath(core).toObjectSync(addition); }).to.throw(RangeError);
+        expect(function () { breath(core).createSync(addition); }).to.throw(RangeError);
     });
 });

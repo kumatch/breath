@@ -21,14 +21,14 @@ describe('breath template variable rule', function () {
     };
 
     it('change and success', function () {
-        var result = breath(core).toObjectSync(addition);
+        var result = breath(core).createSync(addition);
 
         expect(result.foo).be.equal('foo {{= a }} and OK');
         expect(result.bar.baz.qux[0]).be.equal('bar baz qux {{= b.c[1] }} and bbb');
     });
 
     it('no change and success', function () {
-        var result = breath(core).setTemplateVariableRule('{{', '}}').toObjectSync(addition);
+        var result = breath(core).setTemplateVariableRule('{{', '}}').createSync(addition);
 
         expect(result.foo).be.equal('foo OK and <%= a %>');
         expect(result.bar.baz.qux[0]).be.equal('bar baz qux bbb and <%= b.c[1] %>');

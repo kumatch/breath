@@ -14,7 +14,7 @@ describe('build a varialble from template async', function () {
             foo: foo, bar: bar, baz: baz
         };
 
-        breath(core).toObject(function (err, result) {
+        breath(core).create(function (err, result) {
             if (err) {
                 done(err);
                 return;
@@ -41,7 +41,7 @@ describe('build a varialble from template async', function () {
                   ]
         };
 
-        breath(core).toObject( function (err, result) {
+        breath(core).create( function (err, result) {
             if (err) {
                 done(err);
                 return;
@@ -79,7 +79,7 @@ describe('build a varialble from template async', function () {
             ]
         };
 
-        breath(core).toObject(addition, function (err, result) {
+        breath(core).create(addition, function (err, result) {
             if (err) {
                 done(err);
                 return;
@@ -116,7 +116,7 @@ describe('build a varialble from template async', function () {
             baz: "<%= a %>"
         };
 
-        breath(core).toObject(function (err, result) {
+        breath(core).create(function (err, result) {
             expect(err).to.be.instanceOf(ReferenceError);
             expect(result).to.be.undefined;
 
@@ -130,7 +130,7 @@ describe('build a varialble from template async', function () {
             bar: "bar <%= foo %>",
         };
 
-        breath(core).toObject(function (err, result) {
+        breath(core).create(function (err, result) {
             expect(err).to.be.instanceOf(RangeError);
             expect(result).to.be.undefined;
 
@@ -144,7 +144,7 @@ describe('build a varialble from template async', function () {
             bar: "<%= foo %>",
         };
 
-        breath(core).toObject(function (err, result) {
+        breath(core).create(function (err, result) {
             expect(err).to.be.instanceOf(RangeError);
             expect(result).to.be.undefined;
 
