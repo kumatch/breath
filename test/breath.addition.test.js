@@ -1,6 +1,6 @@
 var expect = require('chai').expect;
 var _ = require('lodash');
-var template = require('../lib/template');
+var breath = require('..');
 
 describe('breath template with additional object', function () {
 
@@ -27,7 +27,7 @@ describe('breath template with additional object', function () {
             ]
         };
 
-        var result = template(core).toObject(addition);
+        var result = breath(core).toObject(addition);
 
         expect(result.foo).be.equal('OK');
         expect(result.bar).be.equal('OK');
@@ -60,33 +60,33 @@ describe('breath template with additional object', function () {
             foo: "aaa", bar: "bbb"
         };
 
-            var result = template(core).toObject(addition);
+            var result = breath(core).toObject(addition);
 
         expect(result.foo).be.equal('bbb');
         expect(result.bar).be.equal('aaa');
     });
 
-    // it('raise error if loop in additional object', function () {
-    //     var core = {
-    //         foo: "<%= a %>"
-    //     };
+    it('raise error if loop in additional object', function () {
+        var core = {
+            foo: "<%= a %>"
+        };
 
-    //     var addition = {
-    //         a: "<%= b %>", b: "<%= a %>"
-    //     };
+        var addition = {
+            a: "<%= b %>", b: "<%= a %>"
+        };
 
-    //     expect(function () { template(core).toObject(addition); }).to.throw(RangeError);
-    // });
+        expect(function () { breath(core).toObject(addition); }).to.throw(RangeError);
+    });
 
-    // it('raise error if loop core and additional objects', function () {
-    //     var core = {
-    //         foo: "<%= bar %>"
-    //     };
+    it('raise error if loop core and additional objects', function () {
+        var core = {
+            foo: "<%= bar %>"
+        };
 
-    //     var addition = {
-    //         bar: "<%= foo %>"
-    //     };
+        var addition = {
+            bar: "<%= foo %>"
+        };
 
-    //     expect(function () { template(core).toObject(addition); }).to.throw(RangeError);
-    // });
+        expect(function () { breath(core).toObject(addition); }).to.throw(RangeError);
+    });
 });
