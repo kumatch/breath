@@ -20,15 +20,24 @@ var template = {
     }
 };
 
-var data = breath(template).toObject();
-console.log(data.say.hello); // "Hello javascript (1995)"
+var obj1 = breath(template).toObjectSync();
+console.log(obj1.say.hello); // "Hello javascript (1995)"
 
-var data2 = breath(template).toObject({ params: { birth: "by Netscape" } });
-console.log(data2.say.hello); // "Hello javascript (by Netscape)"
+var obj2 = breath(template).toObjectSync({ params: { birth: "by Netscape" } });
+console.log(obj2.say.hello); // "Hello javascript (by Netscape)"
 
 var value = breath(template).get('say.hello', { params: { name: "Node", birth: 2009 } });
 console.log(value); // "Hello Node (2009)"
 ```
+
+// async
+breath(template).toObject(function (err, obj) {
+    //...
+});
+
+breath(template).toObject({ params: { name: "world" }}, function (err, obj) {
+    //...
+});
 
 
 
