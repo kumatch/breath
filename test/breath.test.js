@@ -19,9 +19,10 @@ describe('build a varialble from template', function () {
         var foo = "OK";
         var bar = "<%= foo %>";
         var baz = "baz with <%= foo %>";
+        var qux = 42;
 
         var core = {
-            foo: foo, bar: bar, baz: baz
+            foo: foo, bar: bar, baz: baz, qux: qux
         };
 
         var result = breath(core).createSync();
@@ -29,10 +30,12 @@ describe('build a varialble from template', function () {
         expect(result.foo).be.equal('OK');
         expect(result.bar).be.equal('OK');
         expect(result.baz).be.equal('baz with OK');
+        expect(result.qux).be.equal(42);
 
         expect(core.foo).be.equal(foo);
         expect(core.bar).be.equal(bar);
         expect(core.baz).be.equal(baz);
+        expect(core.qux).be.equal(qux);
     });
 
     it('success for array', function () {
@@ -40,7 +43,8 @@ describe('build a varialble from template', function () {
         var core = {
             list: [ "OK",
                     "<%= list[0] %>",
-                    "str <%= list[0] %>"
+                    "str <%= list[0] %>",
+                    42
                   ]
         };
 
@@ -49,6 +53,7 @@ describe('build a varialble from template', function () {
         expect(result.list[0]).be.equal('OK');
         expect(result.list[1]).be.equal('OK');
         expect(result.list[2]).be.equal('str OK');
+        expect(result.list[3]).be.equal(42);
     });
 
 
