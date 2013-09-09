@@ -3,7 +3,7 @@ breath
 
 builds a javascript variable from a template.
 
-Usage (draft)
+Usage
 -----
 
 ```javascript
