@@ -218,4 +218,13 @@ describe('build a varialble from template', function () {
 
         expect(function () { breath(core).createSync(); }).to.throw(RangeError);
     });
+
+
+
+    it('success if core object is NODE module', function () {
+        var fs = require('fs');
+        var result = breath(fs).createSync();
+
+        expect(result.exists).be.equal(fs.exists);
+    });
 });
