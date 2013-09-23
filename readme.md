@@ -3,6 +3,14 @@ breath
 
 builds a javascript variable from a template.
 
+
+Install
+-----
+
+    $ npm install breath
+
+
+
 Usage
 -----
 
