@@ -220,8 +220,7 @@ describe('build a varialble from template', function () {
     });
 
 
-
-    it('success if core object is NODE module', function () {
+    it('success if core object is Node module', function () {
         var fs = require('fs');
         var result = breath(fs).createSync();
 

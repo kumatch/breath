@@ -156,4 +156,18 @@ describe('build a varialble from template async', function () {
             done();
         });
     });
+
+    it('success if core object is Node module', function (done) {
+        var fs = require('fs');
+
+        breath(fs).create(function (err, result) {
+            if (err) {
+                done(err);
+            } else {
+                expect(result.exists).be.equal(fs.exists);
+                done();
+            }
+        });
+
+    });
 });
