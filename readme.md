@@ -3,6 +3,8 @@ breath
 
 builds a javascript variable from a template.
 
+[![Build Status](https://travis-ci.org/kumatch/breath.png?branch=master)](https://travis-ci.org/kumatch/breath)
+
 
 Install
 -----
