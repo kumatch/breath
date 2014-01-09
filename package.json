@@ -2,7 +2,7 @@
   "author": "Yosuke Kumakura <kumatch@gmail.com>",
   "name": "breath",
   "description": "builds a javascript variable from a template.",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "main": "./lib/breath.js",
   "repository": {
     "type": "git",
