@@ -10,9 +10,9 @@
   },
   "github": "https://github.com/kumatch/breath",
   "dependencies": {
-    "lodash": "~1.3",
+    "lodash": "~2.4",
     "async": "~0.2",
-    "nestraight": "0.1"
+    "nestraight": "0.3"
   },
   "devDependencies": {
     "chai": "*",
